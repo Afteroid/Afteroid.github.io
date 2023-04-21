@@ -3,6 +3,7 @@
 <head>
 <bgsound src="music19.wav">
   <link href="https://fonts.cdnfonts.com/css/google-sans?styles=20574" rel="stylesheet">
+  <link rel="preload" href="VKSansDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
                 
 <style>
 @font-face {
@@ -13,6 +14,14 @@
         url('Benzin-ExtraBold.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
+}
+@font-face {
+    font-family: 'VK Sans Display';
+    src: url('VKSansDisplay-Bold.woff2') format('woff2'),
+        url('VKSansDisplay-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
   .ebal{
     font-family: 'Benzin';
@@ -25,7 +34,7 @@
     height: 30px;
     background: #4da1f7;
 outline: none;
-font-family: 'Product Sans', sans-serif;
+font-family: 'VK Sans Display', sans-serif;
 color: #000;
   border-radius: 5px;
   margin-bottom:-40px;
@@ -35,7 +44,7 @@ html{
             background: #1F1F1F;
   				
             }
-.text{
+.text3{
 font-family: 'Product Sans', sans-serif;
 color: #fff;
 margin-bottom: 40px;
@@ -43,14 +52,23 @@ user-select: none;
   font-size: 24px;
   
 }
+.text{
+font-family: 'VK Sans Display', sans-serif;
+color: #fff;
+margin-bottom: 40px;
+user-select: none;
+  font-size: 24px;
+  
+}
+  
 .text2{
-font-family: 'Product Sans', sans-serif;
+font-family: 'VK Sans Display', sans-serif;
 color: #fff;
 margin-bottom: 40px;
 user-select: none;
 }
 .tex{
-font-family: 'Product Sans', sans-serif;
+font-family: 'VK Sans Display', sans-serif;
 color: #2F4F4F;
 margin-bottom: 50px;
 }
@@ -72,7 +90,7 @@ a:focus{
   }
 </style>
 </head>
-<center><p class="ebal">MUZIK <br> SHAMSIK<br>&#128376&#127911&#128376</p><p class="text" style="color:#ffffff">Кома</p>
+<center><p class="ebal">MUZIK <br> SHAMSIK<br>&#128376&#127911&#128376</p><p class="text3" style="color:#ffffff">Кома</p>
 <audio src="music.mp3" controls></audio><hr>
 <p class="text" style="color:#ffffff">Прости, Мама</p>
 <audio src="music2.mp3" controls></audio><hr>
