@@ -130,6 +130,21 @@ a:focus{
 <p class="text" style="color:#ffffff">Равнодушие</p>
 <audio src="music18.mp3" controls controlsList="nodownload" ></audio><hr>
 <p class="tex">Копирование материала с сайта разрешено.<br>Способы связи со мной:<br> +7 996-108-58-98 vinovatnet@gmail.com</p></center>
-    
+    <script>
+     const audioElements = Array.from(document.getElementsByTagName('audio'));
+
+  const stopOtherAudio = (currentAudio) => {
+    audioElements.forEach((audio) => {
+      if (audio !== currentAudio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+  };
+
+  audioElements.forEach((audio) => {
+    audio.addEventListener('play', () => stopOtherAudio(audio));
+  });
+</script>
 </body>
 </html>
