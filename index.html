@@ -145,6 +145,28 @@ a:focus{
   audioElements.forEach((audio) => {
     audio.addEventListener('play', () => stopOtherAudio(audio));
   });
+const audios = document.querySelectorAll('audio');
+let currentAudioIndex = 0;
+
+function playNextAudio() {
+    currentAudioIndex = (currentAudioIndex + 1) % audios.length;
+    audios[currentAudioIndex].currentTime = 0, audios[currentAudioIndex].play();
+}
+
+function playNextAudioAfterDelay(length, index) {
+    setTimeout(({
+        length
+    }, i) => {
+        i === length - 1 ? (currentAudioIndex = 0, audios[currentAudioIndex].currentTime = 0, audios[currentAudioIndex].play()) : playNextAudio();
+    }, 1000, {
+        length
+    }, index);
+}
+
+audios.forEach((audio, index) => {
+    audio.addEventListener('play', () => currentAudioIndex = Array.from(audios).indexOf(audio));
+    audio.addEventListener('ended', () => playNextAudioAfterDelay(audios, index));
+});
 </script>
 </body>
 </html>
